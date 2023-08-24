@@ -5,9 +5,8 @@ package introduccion
 
 object App {
   def main(args: Array[String]): Unit = {
-    val ob1 = new ListaFactoriales()
-    val list_total: List[BigInt] = ob1.objListaFactoriales(10)
-    print(list_total.reverse)
+    val objEjercicioListas: EjercicioListas = new EjercicioListas()
+    print(objEjercicioListas.repetirListas(List(1,2,3),1))
   }
 
   def greeting(): String = "Hello, world!"
