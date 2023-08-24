@@ -1,0 +1,19 @@
+id: file:///C:/Users/Alejandro/github-classroom/Programacion-funcional-2023-I/ejercicio-de-trabajo-AlejandroSierraUV26/app/src/main/scala/introduccion/ListaFactoriales.scala:[60..61) in Input.VirtualFile("file:///C:/Users/Alejandro/github-classroom/Programacion-funcional-2023-I/ejercicio-de-trabajo-AlejandroSierraUV26/app/src/main/scala/introduccion/ListaFactoriales.scala", "package introduccion
+
+
+class ListaFactoriales {
+    def (n : Int): List[BigInt] = {
+        var listaFactoriales : List[BigInt] = List()
+        val objFactorial: Factorial = new Factorial()
+        //Complete el código
+        for (i <- 1 to n) {
+            val factorial = objFactorial.calculateFactorial(i)
+            listaFactoriales = factorial :: listaFactoriales
+        }
+        return listaFactoriales
+    }
+}
+")
+file:///C:/Users/Alejandro/github-classroom/Programacion-funcional-2023-I/ejercicio-de-trabajo-AlejandroSierraUV26/app/src/main/scala/introduccion/ListaFactoriales.scala:5: error: expected identifier; obtained lparen
+    def (n : Int): List[BigInt] = {
+        ^
