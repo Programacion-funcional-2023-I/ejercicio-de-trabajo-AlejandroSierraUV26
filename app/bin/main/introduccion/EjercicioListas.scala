@@ -2,7 +2,7 @@ package introduccion
 
 import javax.naming.OperationNotSupportedException
 
-class EjercicioListas {
+class EjercicioListas(){
   /*
   * Punto 2 repetir lista
   * @param lista Lista a repetir
@@ -13,8 +13,23 @@ class EjercicioListas {
   */
   def repetirListas(lista: List[Int], n: Int): List[List[Int]] = {
     var listaRepetida : List[List[Int]] = List()
-    //Complete el código
-    throw new UnsupportedOperationException("No implementado aún")
+    val numero_elementos : Int = lista.size
+    for (i <- 1 to numero_elementos) {
+      var listaInterna : List[Int]= List()
+      if(n == 0){
+        listaRepetida = List() +: listaRepetida
+      }
+      else if (n>0){
+        for(j <-1 to n ) {
+          listaInterna = lista(i-1)+:listaInterna
+        }
+        listaRepetida = listaInterna +: listaRepetida
+      }
+      else if(n<0){
+        throw new java.lang.IllegalArgumentException("No valores menores de 0")
+      }
+    }
+    return listaRepetida.reverse
   }
   /*
   * Punto 3: Filtrar listas
@@ -26,9 +41,47 @@ class EjercicioListas {
   */
 
   def filtrarListas(criterioIn: String, n: Int, lista: List[Int]) : List[Int] = {
-    var criterio : String = criterioIn.toLowerCase()
+    val criterio: String = criterioIn.toLowerCase
     var listaFiltrada : List[Int] = List()
+    for(i <- 1 to lista.length){
+    if(criterio.equals("mayor")){
+      if (n < lista(i-1)) {
+        listaFiltrada = lista(i-1) +: listaFiltrada
+      }
+    }
+    else if (criterio.equals("menor")) {
+      if (n > lista(i-1)) {
+        listaFiltrada = lista(i-1) +: listaFiltrada
+      }
+      print(listaFiltrada.reverse)
+    }
+    else if (criterio.equals("mayoroigual")) {
+      if (n <= lista(i-1)) {
+        listaFiltrada = lista(i-1) +: listaFiltrada
+      }
+    }
+    else if (criterio.equals("igual")) {
+      if (n == lista(i-1)) {
+        listaFiltrada = lista(i-1) +: listaFiltrada
+      }
+    }
+    else if (criterio.equals("diferente")) {
+      if (n != lista(i-1)) {
+        listaFiltrada = lista(i-1) +: listaFiltrada
+      }
+    }
+    else if (criterio.equals("menoroigual")) {
+      if (n >= lista(i-1)) {
+        listaFiltrada = lista(i-1) +: listaFiltrada
+      }
+    }
+      else{
+      throw new java.lang.IllegalArgumentException("Mal escrito"+ criterio)
+
+    }
+    }
+
     //Complete el código
-    throw new UnsupportedOperationException("No implementado aún")
+    listaFiltrada.reverse
   }
 }
