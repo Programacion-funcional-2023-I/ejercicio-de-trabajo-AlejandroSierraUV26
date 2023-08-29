@@ -24,6 +24,7 @@ class EjercicioListas(){
           listaInterna = lista(i-1)+:listaInterna
         }
 
+
         listaRepetida = listaInterna +: listaRepetida
       }
       else if(n<0){
